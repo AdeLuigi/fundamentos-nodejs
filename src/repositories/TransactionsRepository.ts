@@ -24,7 +24,7 @@ class TransactionsRepository {
   public getBalance(): Balance {
     const { transactions } = this;
     const balance = transactions.reduce(
-      (accumulator: Balance, next) => {
+      (accumulator: Balance, next: Transaction) => {
         if (next.type === 'income') {
           accumulator.income += next.value;
         } else if (next.type === 'outcome') {
